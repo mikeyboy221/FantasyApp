@@ -1,0 +1,45 @@
+@model FantasyApp.ViewComponents.TournamentCardViewComponent.ViewModel
+
+<a tabindex="-1" class="group aspect-video cursor-pointer rounded-lg bg-slate-800 p-4" asp-page="/Account/Tournament"
+    asp-route-userTournamentId=@Model.UserTournament.Id asp-route-tournamentId=@Model.UserTournament.TournamentId
+    asp-route-pageType="live">
+    <div class="relative h-full w-full">
+      <!-- Tournament Date -->
+      <div class="absolute bottom-0 right-0 flex w-fit items-center justify-center gap-2 text-gray-200">
+        <div class="flex gap-2">
+          <div class="w-fit rounded-full bg-green-700 px-4 flex space-x-2 py-1 font-bold">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+              class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
+            </svg>
+
+            <p>@Model.Tournament.DateStart</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tournament image -->
+      <div class="absolute right-0 aspect-square h-2/3 rounded-full bg-black bg-opacity-10">
+        <img class="h-full w-full" src="~/images/missingimage.png" />
+      </div>
+
+      <!-- Player counter -->
+      <div class="absolute bottom-0 flex items-center justify-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+          class="h-6 w-6">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+        </svg>
+
+        <span id="PlayerCount" class="bottom-0"><strong>@Model.UserTournament.UserTournamentTickets.Count / @Model.UserTournament.MaxParticipants</strong></span>
+      </div>
+
+      <!-- League info -->
+      <div class="flex w-fit flex-col gap-2">
+        <!-- Tournament Text -->
+        <div class="text-xl">@Model.UserTournament.Name</div>
+        <div>@Model.Tournament.Name</div>
+      </div>
+    </div>
+  </a>

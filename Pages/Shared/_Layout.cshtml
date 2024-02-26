@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - FantasyApp</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/FantasyApp.styles.css" asp-append-version="true" />
+</head>
+
+<body>
+    <header></header>
+    <!-- Main display -->
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+</body>
+
+<!-- Footer -->
+@* <div class="footer justify-center">
+<div class="max-w-7xl px-8 py-8">
+<h1>Footer</h1>
+<h1>Footer</h1>
+<h1>Footer</h1>
+<h1>Footer</h1>
+</div>
+</div> *@
+
+</html>

@@ -1,0 +1,51 @@
+﻿@page
+@model FantasyApp.Areas.Identity.Pages.Account.RegisterModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="block w-full">
+  <div id="centre" class="mx-auto flex max-w-md flex-col">
+    <h1 class="heading text-lg text-white">Register</h1>
+
+    <div id="registerForm" class="rounded-lg bg-slate-800 p-4">
+      <form class="grid grid-cols-1" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+        <div class="pb-4">
+          <label asp-for="Input.Email" class="form-input-label">Email</label>
+          <input asp-for="Input.Email" class="form-input" aria-required="true" placeholder="Example@email.com" />
+          <div class="h-6 text-red-600"><span asp-validation-for="Input.Email"></span></div>
+        </div>
+
+        @* <div class="pb-4">
+          <label asp-for="Input.DisplayName" class="form-input-label">Display Name</label>
+          <input asp-for="Input.DisplayName" class="form-input" aria-required="true" placeholder="Display Name" />
+          <div class="h-6 text-red-600"><span asp-validation-for="Input.DisplayName"></span></div>
+        </div> *@
+
+        <div class="pb-4">
+          <label asp-for="Input.Password" class="form-input-label">Password</label>
+          <input asp-for="Input.Password" class="form-input" aria-required="true" placeholder="Password" />
+          <div class="h-6 text-red-600"><span asp-validation-for="Input.Password"></span></div>
+        </div>
+
+        <div class="pb-4">
+          <label asp-for="Input.ConfirmPassword" class="form-input-label">Confirm Password</label>
+          <input asp-for="Input.ConfirmPassword" class="form-input" aria-required="true" placeholder="Password" />
+          <div class="h-6 text-red-600"><span asp-validation-for="Input.ConfirmPassword"></span></div>
+        </div>
+
+        <div class="pb-4">
+          <button id="registerSubmit" class="form-submit" type="submit">Register</button>
+          <div asp-validation-summary="ModelOnly" class="h-6 text-red-600" role="alert"></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

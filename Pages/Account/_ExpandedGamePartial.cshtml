@@ -1,0 +1,138 @@
+@model List<FantasyApp.Pages.Account.TournamentModel.ExpandedGame>
+
+<div class="space-y-6">
+    <!-- Nav bar -->
+    <div class="flex h-10 w-full justify-around">
+        @foreach (var game in Model)
+        {
+            <button data-gameid="@game.GameId" class="game-scoreboard-button">
+                Game @game.GameInMatch
+            </button>
+        }
+    </div>
+
+    <hr class="opacity-20" />
+
+    @foreach (var expandedGame in Model)
+    {
+        <div id="@expandedGame.GameId" class="hidden game-scoreboard">
+            <!-- Blue Side -->
+            <div class="relative overflow-x-auto">
+                <table class="w-full table-auto text-right text-sm text-gray-400">
+                    <thead class="h-10 w-full bg-black bg-opacity-5 text-gray-400">
+                        <tr>
+                            <th scope="col" class="w-2/6 text-left">@expandedGame.Team1 @expandedGame.Team1HeaderString</th>
+                            <th scope="col" class="w-2/6 text-center"></th>
+                            <th scope="col" class="w-1/6 text-center">KDA</th>
+                            <th scope="col" class="w-1/6 text-center">Damage</th>
+                            <th scope="col" class="w-1/6 text-center">Gold</th>
+                            <th scope="col" class="w-1/6 text-center">Wards</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="text-white">
+                        <!-- Player scoreboard -->
+                        @foreach (var roleAndScoreboard in expandedGame.Team1Scoreboard.Scoreboard)
+                        {
+                            <tr>
+                                <td scope="row" class="flex space-x-4 text-left font-medium text-white">
+                                    <div class="aspect-square h-10 bg-black">A</div>
+
+                                    <div class="flex h-full w-full flex-col">
+                                        <a>@roleAndScoreboard.Value.PlayerName</a>
+                                        <a>@roleAndScoreboard.Key</a>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="flex space-x-6">
+                                        @foreach (var draftResult in expandedGame.Team1Scoreboard.DraftResults[roleAndScoreboard.Key])
+                                        {
+                                            <div class="flex items-center space-x-4">
+                                                <img class="h-10 w-10 rounded-full" src="~/images/profile.png" alt="profile image" />
+
+                                                <span class="flex h-6 w-fit items-center rounded-full bg-green-900 px-2 text-xs font-medium text-green-300">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
+                                                </svg>
+
+                                                200
+                                                </span>
+                                            </div>
+                                        }
+                                    </div>
+                                </td>
+
+                                <td class="text-center">
+                                    @roleAndScoreboard.Value.Kills/@roleAndScoreboard.Value.Deaths/@roleAndScoreboard.Value.Assists
+                                </td>
+                                <td class="text-center">@roleAndScoreboard.Value.DamageToChampions</td>
+                                <td class="text-center">@roleAndScoreboard.Value.Gold</td>
+                                <td class="text-center">@roleAndScoreboard.Value.VisionScore</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Red Side -->
+            <div class="relative overflow-x-auto">
+                <table class="w-full table-auto text-right text-sm text-gray-400">
+                    <thead class="h-10 w-full bg-black bg-opacity-5 text-gray-400">
+                        <tr>
+                            <th scope="col" class="w-2/6 text-left">@expandedGame.Team2 @expandedGame.Team2HeaderString</th>
+                            <th scope="col" class="w-2/6 text-center"></th>
+                            <th scope="col" class="w-1/6 text-center">KDA</th>
+                            <th scope="col" class="w-1/6 text-center">Damage</th>
+                            <th scope="col" class="w-1/6 text-center">Gold</th>
+                            <th scope="col" class="w-1/6 text-center">Wards</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="text-white">
+                        <!-- Player scoreboard -->
+                        @foreach (var roleAndScoreboard in expandedGame.Team2Scoreboard.Scoreboard)
+                        {
+                            <tr>
+                                <td scope="row" class="flex space-x-4 text-left font-medium text-white">
+                                    <div class="aspect-square h-10 bg-black">A</div>
+
+                                    <div class="flex h-full w-full flex-col">
+                                        <a>@roleAndScoreboard.Value.PlayerName</a>
+                                        <a>@roleAndScoreboard.Key</a>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="flex space-x-6">
+                                        @foreach (var draftResult in expandedGame.Team2Scoreboard.DraftResults[roleAndScoreboard.Key])
+                                        {
+                                            <div class="flex items-center space-x-4">
+                                                <img class="h-10 w-10 rounded-full" src="~/images/profile.png" alt="profile image" />
+
+                                                <span class="flex h-6 w-fit items-center rounded-full bg-green-900 px-2 text-xs font-medium text-green-300">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
+                                                </svg>
+
+                                                200
+                                                </span>
+                                            </div>
+                                        }
+                                    </div>
+                                </td>
+
+                                <td class="text-center">
+                                    @roleAndScoreboard.Value.Kills/@roleAndScoreboard.Value.Deaths/@roleAndScoreboard.Value.Assists
+                                </td>
+                                <td class="text-center">@roleAndScoreboard.Value.DamageToChampions</td>
+                                <td class="text-center">@roleAndScoreboard.Value.Gold</td>
+                                <td class="text-center">@roleAndScoreboard.Value.VisionScore</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
+</div>

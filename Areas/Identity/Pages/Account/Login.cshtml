@@ -1,0 +1,101 @@
+﻿@page
+@model FantasyApp.Areas.Identity.Pages.Account.LoginModel
+
+@{
+    ViewData["Title"] = "Sign In";
+}
+
+@* <div class="flex h-screen flex-col items-center text-white">
+    <!-- container -->
+    <div class="pt-48 w-96">
+        <!-- Top buttons -->
+        <div class="container">
+            <div class="container flex flex-row justify-center space-x-24">
+                <div class="flex w-36 flex-col items-center justify-center gap-2 p-6 font-bold cursor-default text-cyan-400">
+                    <a asp-area="Identity" asp-page="/Account/Login">Sign in</a>
+                    <div class="h-1 w-full rounded-full bg-cyan-400"></div>
+                </div>
+
+                <div class="flex w-36 flex-col items-center justify-center gap-2 p-6 font-bold hover:text-cyan-400 cursor-pointer">
+                    <a asp-area="Identity" asp-page="/Account/Register">Register</a>
+                    <div class="h-1 w-full rounded-full bg-white hidden"></div>
+                </div>
+            </div>
+
+            <hr class="h-1 rounded-full border-0 bg-black bg-opacity-20" />
+        </div>
+
+
+        <div id="signinForm">
+            <form class="grid grid-cols-1" asp-route-returnUrl="/Account/Dashboard" method="post">
+                <div class="my-4">
+                    <input asp-for="Input.Email" class="signinform-input" aria-required="true"
+                        placeholder="Example@email.com" />
+                    <span asp-validation-for="Input.Email" class="text-red-600 mx-6"></span>
+                </div>
+
+                <div class="my-4">
+                    <input asp-for="Input.Password" class="signinform-input" aria-required="true"
+                        placeholder="Password" />
+                    <span asp-validation-for="Input.Password" class="text-red-600 mx-6"></span>
+                </div>
+
+                <!-- submit button -->
+                <button id="loginSubmit" class="submitform-button my-4" type="submit">Sign In</button>
+                <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+            </form>
+
+            <!-- lower options -->
+            <div class="flex flex-col items-center justify-center">
+                <a id="forgotPassword" asp-page="./ForgotPassword" class="m-2">Forgot your password?</a>
+                <a id="resendConfirmation" asp-page="./ResendEmailConfirmation" class="m-2">Resend email
+                    confirmation</a>
+            </div>
+        </div>
+    </div>
+</div> *@
+
+<div class="block w-full">
+  <div id="centre" class="mx-auto flex max-w-md flex-col">
+    <h1 class="heading text-lg text-white">Sign In</h1>
+
+    <div id="signinForm" class="rounded-lg bg-slate-800 p-4">
+      <form class="grid grid-cols-1" asp-route-returnUrl="/Account/Dashboard" method="post">
+        <div class="pb-4">
+          <label asp-for="Input.Email" class="form-input-label">Email</label>
+          <input asp-for="Input.Email" class="form-input" aria-required="true" placeholder="Example@email.com" />
+          <div class="h-6 text-red-600"><span asp-validation-for="Input.Email"></span></div>
+        </div>
+
+        <div class="pb-4">
+          <label asp-for="Input.Password" class="form-input-label">Password</label>
+          <input asp-for="Input.Password" class="form-input" aria-required="true" placeholder="Password" />
+          <div class="h-6 text-red-600"><span asp-validation-for="Input.Password"></span></div>
+        </div>
+
+        <div class="flex pb-4">
+          <label asp-for="Input.RememberMe" class="form-input-label h-6 pl-2">
+          <input asp-for="Input.RememberMe" class="h-6 w-6 rounded-md" /> @Html.DisplayNameFor(m => m.Input.RememberMe)
+          </label>
+        </div>
+
+        <div class="pb-4">
+          <button id="loginSubmit" class="form-submit" type="submit">Sign In</button>
+          <div asp-validation-summary="ModelOnly" class="h-6 text-red-600" role="alert"></div>
+        </div>
+      </form>
+
+      <!-- lower options -->
+      <div class="flex flex-col items-center justify-center">
+        <a id="forgotPassword" asp-page="./ForgotPassword" class="m-2 text-white underline">Forgot your password?</a>
+        <a id="resendConfirmation" asp-page="./ResendEmailConfirmation" class="m-2 text-white underline">Resend email confirmation</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

@@ -1,0 +1,130 @@
+@page
+@using FantasyApp.Pages.Account
+@model DashboardModel
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<script src="~/js/createTournament.js"></script>
+
+<!-- Create league modal -->
+<div id="create-league-modal" tabindex="-1" aria-hidden="true" class="hidden z-50 fixed w-full">
+    <div class="relative w-full max-w-md p-4">
+        <div class="relative rounded-lg shadow bg-slate-800 w-full">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between rounded-t p-4 md:p-5 border-gray-600">
+                <h3 class="text-xl font-semibold text-white">Create a league</h3>
+                <button type="button" data-modal-target="create-league-modal" data-modal-hide="create-league-modal"
+                    class="end-2.5 ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm  hover:bg-gray-600 hover:text-white">
+                    <svg class="h-3 w-3 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="p-4 md:p-5">
+                <form asp-page-handler="CreateUserTournament" method="post" class="space-y-4">
+                    <div>
+                        <label asp-for="CreateUserTournamentInput.Name" class="form-input-label">League Name *</label>
+                        <input asp-for="CreateUserTournamentInput.Name" type="text" class="form-input"
+                            placeholder="My League" required />
+                    </div>
+
+                    <div>
+                        <label asp-for="CreateUserTournamentInput.Description" class="form-input-label">League
+                            Description
+                            *</label>
+                        <textarea asp-for="CreateUserTournamentInput.Description" type="text"
+                            class="form-input h-24 resize-none"
+                            placeholder="Welcome to the best league, top the league to show your skill!"
+                            maxlength="140">
+                        </textarea>
+                    </div>
+
+                    <div>
+                        <label asp-for="CreateUserTournamentInput.Password" class="form-input-label">Password ?</label>
+                        <input asp-for="CreateUserTournamentInput.Password" type="text"
+                            placeholder="MyFriendlyLeague123" class="form-input" />
+                    </div>
+
+                    <label asp-for="CreateUserTournamentInput.TournamentId" class="form-input-label">Select a
+                        tournament</label>
+                    <select id="SelectedTournament" asp-for="CreateUserTournamentInput.TournamentId" class="form-input" onchange="onTournamentChanged()">
+                        @foreach (var tournament in Model.UpcomingTournaments)
+                        {
+                            <option value="@tournament.OverviewPage" data-begin_at="@tournament.DateStart">@tournament.Name</option>
+                        }
+                    </select>
+
+                    <div id = "SelectedTournamentDetails" class="flex flex-col space-y-4 bg-black bg-opacity-40 rounded-md">
+                      <div class="w-full flex justify-between p-4 rounded-md">
+                        <p class="text-md text-white font-bo">Scoring starts:</p>
+                        <p id="TournamentBeginAt" class="text-md text-white font-bo">n/a</p>
+                      </div>
+
+                      <div class="w-full flex justify-between p-4 rounded-md">
+                        <p class="text-md text-white font-bo">Scoring ends:</p>
+                        <p id="TournamentEndAt" class="text-md text-white font-bo">n/a</p>
+                      </div>
+                    </div>
+
+                    <button type="submit" class="form-submit">Create League</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Date controller -->
+@await Component.InvokeAsync("DemoHeader")
+
+<div class="flex min-h-screen flex-col items-center text-white pt-20">
+
+    <!--centre container-->
+    <div class="container m-4">
+        <div class="mx-auto grid w-full max-w-7xl grid-cols-1 gap-4">
+            <partial name="_DashboardHeader"/>
+
+            <!--container-->
+            <div class="h-48 overflow-hidden">
+                <!-- upcoming matches -->
+                @await Component.InvokeAsync("UpcomingMatches")
+            </div>
+
+            <h1 class="heading text-white">Create League</h1>
+            <div class="mx-auto grid w-full max-w-7xl grid-cols-3 gap-4">
+                <button data-modal-target="create-league-modal" data-modal-show="create-league-modal" type="button">
+                    <div class="group aspect-video cursor-pointer rounded-lg bg-slate-800 p-4">
+                        <div class="relative flex justify-center items-center h-full w-full">
+                            <div
+                                class="create-join-league-button flex justify-center items-center gap-2 w-fit px-6 py-2 rounded-md group-hover:bg-cyan-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                </svg>
+                                <span>Create<span>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+
+                @foreach (var joinedUserTournament in Model.JoinedUserTournaments)
+                {
+                    @await Component.InvokeAsync("TournamentCard", joinedUserTournament)
+                }
+            </div>
+
+            <h1 class="heading text-white">Join Public</h1>
+            <div class="mx-auto grid w-full max-w-7xl grid-cols-3 gap-4">
+                @foreach (var userTournament in Model.UserTournaments)
+                {
+                    @await Component.InvokeAsync("TournamentCard", userTournament)
+                }
+            </div>
+        </div>
+    </div>
+</div>

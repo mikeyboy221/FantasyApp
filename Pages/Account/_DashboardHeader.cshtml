@@ -1,0 +1,25 @@
+<div class="container flex flex-row space-x-6">
+    <!-- profile picture -->
+    <div class="aspect-square">
+        <img class="w-24 h-24">
+        </img>
+    </div>
+
+    <div class="col-span-4 col-start-2 flex flex-col-reverse text-white">
+        <span class="text-2xl">@Model.GetHeaderDateString()</span>
+        <span class="text-4xl font-bold"> Hello User</span>
+    </div>
+</div>
+
+<!--navbar-->
+<div class="flex justify-between rounded-full">
+    <div class="navbar-link">Dashboard</div>
+    <div class="navbar-link">Account</div>
+
+
+    <div class="navbar-link">
+        <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="/">
+            <button type="submit" class="navbar-link">Logout</button>
+        </form>
+    </div>
+</div>

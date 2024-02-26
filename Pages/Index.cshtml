@@ -1,0 +1,135 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<!-- Align horizontal -->
+<div class="flex flex-col items-center text-white">
+    <!-- Centre container -->
+    <div class="max-w-7xl px-8 pb-8">
+        <!-- Nav bar -->
+        <div class="flex justify-between py-6">
+            <div>
+                <button class="navbar-link">Home</button>
+            </div>
+            <div>
+                <partial name="_NavBarIdentityPartial" />
+            </div>
+        </div>
+
+        <!-- Hero -->
+        <div class="grid h-screen grid-cols-2 items-center">
+            <div class="space">
+                <h1 class="w-full pb-8 text-left text-7xl font-bold drop-shadow-lg">Fantasy App</h1>
+                <p class="text-2x1 w-full text-left">A new way to play, insert [fantasy app name here] your new home for
+                    any e-sports pick'ems</p>
+                </br>
+                <button class="aspect-auto px-12 py-2 rounded-md bg-cyan-400 font-bold text-lg hover:translate-x-2 transition-transform">
+                    <a href="/Account/Dashboard">Let's Play</a>
+                </button>
+
+                </div>
+            <div class="bg-black"></div>
+        </div>
+
+        <!-- Worlds 2023 Table -->
+        @* <div class="">
+        <h1 class="heading">Worlds 2023</h1>
+        <div class="bg-black bg-opacity-20">
+            <div class="relative overflow-x-auto">
+            <table class="w-full text-left rtl:text-right text-current">
+                <thead class="">
+                    <tr>
+                        <th scope="col" class="px-6 py-3 text-left">
+                            Player
+                        </th>
+                        <th scope="col" class="px-6 py-3 text-center">
+                            Total Kills
+                        </th>
+                        <th scope="col" class="px-6 py-3 text-center">
+                            Win:Loss
+                        </th>
+                        <th scope="col" class="px-6 py-3 text-center">
+                            Total Damage
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="">
+                        <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap text-left">
+                            Faker
+                        </th>
+                        <td class="px-6 py-4 text-center">
+                            99
+                        </td>
+                        <td class="px-6 py-4 text-center">
+                            1/20
+                        </td>
+                        <td class="px-6 py-4 text-center">
+                            116 220 150
+                        </td>
+                    </tr>
+                    <tr class="">
+                        <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap text-left">
+                            Faker
+                        </th>
+                        <td class="px-6 py-4 text-center">
+                            99
+                        </td>
+                        <td class="px-6 py-4 text-center">
+                            1/20
+                        </td>
+                        <td class="px-6 py-4 text-center">
+                            116 220 150
+                        </td>
+                    </tr>
+                    <tr class="">
+                        <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap text-left">
+                            Faker
+                        </th>
+                        <td class="px-6 py-4 text-center">
+                            99
+                        </td>
+                        <td class="px-6 py-4 text-center">
+                            1/20
+                        </td>
+                        <td class="px-6 py-4 text-center">
+                            116 220 150
+                        </td>
+                    </tr>
+                    <tr class="">
+                        <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap text-left">
+                            Faker
+                        </th>
+                        <td class="px-6 py-4 text-center">
+                            99
+                        </td>
+                        <td class="px-6 py-4 text-center">
+                            1/20
+                        </td>
+                        <td class="px-6 py-4 text-center">
+                            116 220 150
+                        </td>
+                    </tr>
+                    <tr class="">
+                        <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap text-left">
+                            Faker
+                        </th>
+                        <td class="px-6 py-4 text-center">
+                            99
+                        </td>
+                        <td class="px-6 py-4 text-center">
+                            1/20
+                        </td>
+                        <td class="px-6 py-4 text-center">
+                            116 220 150
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+        </div> *@
+    </div>
+</div>

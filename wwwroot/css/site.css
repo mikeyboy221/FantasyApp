@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply overflow-x-hidden bg-gray-900;
+}
+
+.heading {
+  @apply p-6 font-bold;
+}
+
+.navbar-link {
+  @apply m-2 cursor-pointer items-center justify-center text-white transition-all hover:text-slate-400;
+}
+
+.create-join-league-button {
+  @apply bg-black bg-opacity-20 hover:bg-cyan-600 hover:bg-opacity-100;
+}
+
+.form-input {
+  @apply block w-full rounded-lg bg-slate-900 p-2.5 text-sm text-white placeholder-gray-400 focus:outline-none;
+}
+
+.form-input-label {
+  @apply mb-2 block text-sm font-medium text-white;
+}
+
+.form-submit {
+  @apply w-full rounded-lg bg-blue-600 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-800;
+}
+
+.tournament-navbar {
+  @apply w-28 rounded-full p-2 text-center text-white hover:cursor-pointer hover:bg-black hover:bg-opacity-20;
+}
+
+.tournament-navbar-selected {
+  @apply w-28 rounded-full bg-black bg-opacity-20 p-2 text-center text-white;
+}
+
+.draft-stepper-selected {
+  @apply flex items-center text-blue-500 after:mx-6 after:hidden after:h-1 after:w-full after:border-b after:border-gray-700 sm:after:inline-block sm:after:content-[''] md:w-full xl:after:mx-10;
+}
+
+.draft-stepper-default {
+  @apply flex items-center after:mx-6 after:hidden after:h-1 after:w-full after:border-b after:border-gray-700 after:content-[''] sm:after:inline-block md:w-full xl:after:mx-10;
+}
+
+.draft-stepper-container {
+  @apply flex items-center after:mx-2 after:text-gray-500 after:content-['/'] sm:after:hidden;
+}
+
+.player-icon {
+  @apply h-10 rounded-full object-contain bg-slate-900;
+}
+
+.player-card {
+  @apply relative aspect-video w-full rounded-md bg-black bg-opacity-50;
+}
+
+.player-card.active {
+  @apply border-2 border-blue-500;
+}
+
+.draft-role-filter-button {
+  @apply mx-auto flex h-full w-fit items-center justify-center gap-2 rounded-lg border-2 border-slate-700 bg-slate-800 px-5 py-1 text-slate-500;
+}
+
+.draft-role-filter-button.active {
+  @apply border-blue-700 text-blue-500;
+}
+
+.indicator {
+  @apply absolute right-0 top-0 h-3.5 w-3.5 rounded-full border-2 border-gray-800 bg-red-600;
+}
+
+.indicator.active {
+  @apply bg-green-500;
+}
+
+.drafted-player-card {
+  @apply relative w-full rounded-md bg-gradient-to-b from-slate-900 to-slate-800;
+}
+
+.player-avatar-img {
+  @apply w-10 h-10 p-1 rounded-full bg-slate-900 object-fill;
+}
+
+.player-avatar-img.active {
+  @apply ring-2 ring-cyan-400
+}
+
+.game-scoreboard-button {
+  @apply rounded-md bg-black bg-opacity-20 px-5 font-bold text-white hover:bg-opacity-40
+}
+
+.game-scoreboard-button.active {
+  @apply bg-opacity-50;
+}

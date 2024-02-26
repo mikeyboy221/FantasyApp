@@ -1,0 +1,16 @@
+@model List<FantasyApp.Models.UpcomingMatch>
+
+<h1 class="heading">Upcoming</h1>
+
+<div class="grid grid-cols-3 gap-8">
+    @for (int i = 0; i < 3; i++)
+    {
+        <div class="rounded-md bg-black bg-opacity-20">
+            <div class="aspect-square flex flex-col gap-2 px-6 py-4">
+                <p class="font-bold text-2xl">@Model[i].name</p>
+                <p>@Model[i].league.name</p>
+                <p>@Model[i].begin_at</p>
+            </div>
+        </div>
+    }
+</div>
