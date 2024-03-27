@@ -1,8 +1,9 @@
-@model FantasyApp.ViewComponents.TournamentLiveViewComponent.ViewModel
+@* @model FantasyApp.ViewComponents.TournamentLiveModel
 
-<script src="~/js/tournamentLive.js"></script>
+<script src="~/js/tournamentLive.js"></script> *@
 
-@if (Model.UserHasTicket)
+
+@* @if (Model.UserHasTicket)
 {
     <div>
         <!-- Stepper -->
@@ -32,32 +33,6 @@
         <!-- Your draft -->
         @if (Model.UserHasDraft)
         {
-            <!-- Container -->
-            <h1 class="heading text-white">Leaderboard</h1>
-            <div>
-                <div class="relative overflow-x-auto">
-                    <table class="w-full text-left text-sm">
-                        <thead class="text-xs uppercase text-gray-300">
-                            <tr>
-                                <th scope="col" class="px-6 py-3">Position</th>
-                                <th scope="col" class="px-6 py-3">Username</th>
-                                <th scope="col" class="px-6 py-3">Total Score</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-white">
-                            @foreach (var userAndDraft in Model.UsersAndDrafts)
-                            {
-                                <tr class="bg-black bg-opacity-30 font-bold">
-                                    <th scope="row" class="text-ce whitespace-nowrap px-6 py-4 font-medium text-white">5th</th>
-                                    <td class="px-6 py-4">@userAndDraft.User.UserName</td>
-                                    <td class="px-6 py-4">200</td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
             <h1 class="heading text-white">Your draft</h1>
             <div class="flex-cols-5 flex h-48 w-full justify-between space-x-4 text-white">
                 <div id="@Model.UserDraft["Top"].ID" class="drafted-player-card">
@@ -105,8 +80,49 @@
                     </div>
                 </div>
             </div>
+        }
+        else
+        {
+            <h1 class="heading text-white">Your Draft</h1>
+            @await Component.InvokeAsync("CreateDraft", new
+                {
+                    TournamentId = Model.TournamentId,
+                    UserTournamentId = Model.UserTournamentId,
+                })
+        }
 
-            <h1 class="heading text-white">Schedule</h1>
+        <!-- Completed drafts -->
+        <div class="h-sc">
+            <h1 class="heading text-white">Completed Drafts</h1>
+            <ol>
+                @foreach (var userAndDraft in Model.UsersAndDrafts)
+                {
+                    <li class="pb-3 sm:pb-4">
+                    <div class="flex items-center space-x-4 rtl:space-x-reverse">
+                        <div class="flex-shrink-0">
+                            <img class="h-8 w-8 rounded-full" src="/docs/images/people/profile-picture-1.jpg"
+                                alt="Neil image" />
+                        </div>
+                        <div class="min-w-0 flex-1">
+                            <p class="truncate text-sm font-medium text-white">@userAndDraft.User.UserName</p>
+                            <p class="truncate text-sm text-gray-400">@userAndDraft.User.Email</p>
+                        </div>
+                        <div class="flex pr-10">
+                            <img class="player-icon" src="~/images/profile.png" alt="player image" />
+                            <img class="player-icon" src="~/images/profile.png" alt="player image" />
+                            <img class="player-icon" src="~/images/profile.png" alt="player image" />
+                            <img class="player-icon" src="~/images/profile.png" alt="player image" />
+                            <img class="player-icon" src="~/images/profile.png" alt="player image" />
+                        </div>
+                        <div class="inline-flex items-center text-base font-semibold text-white">10.8</div>
+                    </div>
+                </li>
+                }
+            </ol>
+        </div>
+
+
+        <h1 class="heading text-white">Schedule</h1>
             <div class="space-y-6">
                 @foreach (var match in Model.Matches)
                 {
@@ -181,44 +197,6 @@
             <script type="text/javascript">
                 initialize();
             </script>
-        }
-        else
-        {
-            <h1 class="heading text-white">Your Draft</h1>
-            @await Component.InvokeAsync("CreateDraft", new
-                {
-                    TournamentId = Model.TournamentId,
-                    UserTournamentId = Model.UserTournamentId,
-                })
-        }
-
-        <!-- Completed drafts -->
-        <div class="h-sc">
-            <h1 class="heading text-white">Completed Drafts</h1>
-            <ol>
-                <li class="pb-3 sm:pb-4">
-                    <div class="flex items-center space-x-4 rtl:space-x-reverse">
-                        <div class="flex-shrink-0">
-                            <img class="h-8 w-8 rounded-full" src="/docs/images/people/profile-picture-1.jpg"
-                                alt="Neil image" />
-                        </div>
-                        <div class="min-w-0 flex-1">
-                            <p class="truncate text-sm font-medium text-white">Neil Sims</p>
-                            <p class="truncate text-sm text-gray-400">email@flowbite.com</p>
-                        </div>
-                        <div class="flex pr-10">
-                            <img class="player-icon" src="~/images/profile.png" alt="player image" />
-                            <img class="player-icon" src="~/images/profile.png" alt="player image" />
-                            <img class="player-icon" src="~/images/profile.png" alt="player image" />
-                            <img class="player-icon" src="~/images/profile.png" alt="player image" />
-                            <img class="player-icon" src="~/images/profile.png" alt="player image" />
-                        </div>
-                        <div class="inline-flex items-center text-base font-semibold text-white">10.8</div>
-                    </div>
-                </li>
-
-            </ol>
-        </div>
     </div>
 }
 else
@@ -226,4 +204,4 @@ else
     <div>
         You need a ticket to view this resource!
     </div>
-}
+} *@

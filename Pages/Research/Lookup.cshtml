@@ -1,0 +1,226 @@
+@page
+@model LookupModel
+@{
+    ViewData["Title"] = "Lookup";
+}
+
+@if (Model.ShowModal)
+{
+    <div tabindex="-1" class="fixed z-50 h-full w-full justify-center bg-black bg-opacity-50">
+        <div class="flex justify-center">
+            <div class="mt-20 space-y-4 bg-slate-900 p-4">
+                <section class="flex justify-between text-white">
+                    <h1 class="text-white">@Model.Year @Model.TournamentId</h1>
+                    <a asp-route-year="@Model.Year" asp-route-tournamentId="@Model.TournamentId"
+                        class="ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-600 hover:text-white">
+                        <svg class="h-3 w-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                        </svg>
+                    </a>
+                </section>
+
+                <div class="flex justify-around">
+                    <p class="font-bold text-2xl text-white">@Model.PlayerStats.Player.Player</p>
+                    <p class="text-2xl font-bold text-slate-600">@Model.PlayerStats.Scoreboards.Count game(s)</p>
+                </div>
+                <div class="w-full h-px bg-white"></div>
+
+                <div class="flex space-x-4">
+                    <!-- Left -->
+                    <section class="w-1/4 space-y-2">
+                        <div>
+                            <img class = "w-full h-full object-cover aspect-square" src="https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/a/a9/HWA_Armut_2018_Winter.png/revision/latest?cb=20180227033822" />
+                        </div>
+
+
+                        <div class="h-16 w-full">
+                            <div class="draft-role-filter-button">
+                                <div class="aspect-square h-8 rounded-full bg-slate-600 overflow-hidden">
+                                    <img
+                                        src="~/images/@(Model.PlayerStats.Player.Role)_icon.webp"
+                                        class="h-full w-full object-cover aspect-square"
+                                    />
+                                </div>
+                                <h1 class="text-lg font-bold">@Model.PlayerStats.Player.Role</h1>
+                            </div>
+                        </div>
+
+                    </section>
+
+                    <!-- Right -->
+                    <section class="w-full space-y-8">
+                        <div class="grid grid-flow-col grid-cols-3 grid-rows-2 text-center">
+                            <div class="flex flex-col space-y-2 p-2">
+                                <h1 class="text-4xl font-bold text-white">@Model.PlayerStats.Sum("Damage")</h1>
+                                <p class="text-gray-500">damage</p>
+                            </div>
+
+                            <div class="flex flex-col space-y-2 p-2">
+                                <h1 class="text-4xl font-bold text-white">@Model.PlayerStats.Sum("Gold")K</h1>
+                                <p class="text-gray-500">gold</p>
+                            </div>
+
+                            <div class="flex flex-col space-y-2 p-2">
+                                <h1 class="text-4xl font-bold text-white">
+                        @Model.PlayerStats.Sum("Win"):@Model.PlayerStats.Sum("Loss")</h1>
+                                <p class="text-gray-500">win:loss</p>
+                            </div>
+
+                            <div class="flex flex-col space-y-2 p-2">
+                                <h1 class="text-4xl font-bold text-white">@Model.PlayerStats.Avg("Damage")</h1>
+                                <p class="text-gray-500">damage/game</p>
+                            </div>
+
+                            <div class="flex flex-col space-y-2 p-2">
+                                <h1 class="text-4xl font-bold text-white">@Model.PlayerStats.Avg("Gold")K</h1>
+                                <p class="text-gray-500">gold/game</p>
+                            </div>
+
+                            <div class="flex flex-col space-y-2 p-2">
+                                <h1 class="text-4xl font-bold text-white">@Model.PlayerStats.WinPercent() %</h1>
+                                <p class="text-gray-500">win %</p>
+                            </div>
+                        </div>
+
+
+                        <div class="h-72 w-full overflow-x-hidden overflow-scroll pr-4">
+                            <table class="w-full text-left">
+                                <thead class="text-gray-300 sticky top-0 bg-slate-900">
+                                    <th class="w-2/12">Champion</th>
+                                    <th class="w-2/12">Damage</th>
+                                    <th class="w-2/12">KDA</th>
+                                    <th class="w-2/12">Gold</th>
+                                    <th class="w-1/6">Cs</th>
+                                    <th class="w-1/6">Vision</th>
+                                    <th class="w-1/6">Win</th>
+                                </thead>
+                                <tbody class="text-white bg-slate-800">
+                                    @foreach (var scoreboard in Model.PlayerStats.Scoreboards)
+                                    {
+                                        <tr class="bg-slate-800 p-2">
+                                            <td class="text-left">@scoreboard.Champion</td>
+                                            <td class="text-left">@scoreboard.DamageToChampions</td>
+                                            <td>@scoreboard.Kills / @scoreboard.Deaths / @scoreboard.Assists</td>
+                                            <td class="text-left">@scoreboard.Gold</td>
+                                            <td>@scoreboard.CS</td>
+                                            <td>@scoreboard.VisionScore</td>
+                                            <td>@scoreboard.PlayerWin</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+<div class="flex w-full justify-center">
+    <div class="mt-20 flex min-h-screen w-2/3 flex-col text-white">
+        <!-- Breadcrumb -->
+        <nav class="jst flex" aria-label="Breadcrumb">
+            <ol class="mb-3 inline-flex items-center sm:mb-0">
+                <!-- Year -->
+                <li>
+                    <div class="flex items-center">
+                        <button id="dropdownYear" data-dropdown-toggle="dropdown-year"
+                            class="inline-flex items-center rounded-lg bg-gray-900 px-3 py-2 text-center text-sm font-normal text-white hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-gray-700">
+                            @Model.Year
+                            <svg class="ms-2.5 h-2.5 w-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 1 4 4 4-4" />
+                            </svg>
+                        </button>
+                        <div id="dropdown-year"
+                            class="z-10 hidden w-44 divide-y divide-gray-100 rounded-lg bg-gray-700 shadow">
+                            <ul class="py-2 text-sm text-gray-200" aria-labelledby="dropdownDefault">
+                                @foreach (var year in Model.Years)
+                                {
+                                    <li>
+                                        <a asp-page="/Research/Lookup" asp-route-year="@year"
+                                            class="block px-4 py-2 hover:bg-gray-600 hover:text-white">@year</a>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <span class="mx-2 text-gray-400">/</span>
+
+                <!-- Tournament -->
+                <li aria-current="page">
+                    <div class="flex items-center">
+                        <button id="dropdownTournament" data-dropdown-toggle="dropdown-tournament"
+                            class="inline-flex items-center rounded-lg px-3 py-2 text-center text-sm font-normal  focus:outline-none focus:ring-4  bg-gray-900 text-white hover:bg-gray-800 focus:ring-gray-700">
+                            @{
+                                var tournamentString = Model.TournamentId ?? "Tournament";
+                            }
+
+                            @tournamentString
+                            <svg class="ms-2.5 h-2.5 w-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 1 4 4 4-4" />
+                            </svg>
+                        </button>
+                        <div id="dropdown-tournament"
+                            class="z-10 hidden w-44 divide-y divide-gray-100 rounded-lg shadow bg-gray-700">
+                            <ul class="py-2 text-sm text-gray-200" aria-labelledby="dropdownDefault">
+                                @foreach (var tournament in Model.Tournaments)
+                                {
+                                    <li>
+                                        <a asp-page="/Research/Lookup" asp-route-year="@Model.Year"
+                                            asp-route-tournamentId="@tournament.OverviewPage"
+                                            class="block px-4 py-2 hover:bg-gray-600 hover:text-white">@tournament.Name</a>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </nav>
+
+        <h1 class="heading text-white">Players Statistics</h1>
+        <div class="rounded-md bg-slate-800 p-2">
+            <table class="w-full table-auto text-left">
+                <thead class="text-sm text-slate-400">
+                    <tr class="bg-bl h-10">
+                        <th scope="col" class="w-1/5 p-2">Name</th>
+                        <th scope="col" class="w-1/5 p-2">Team</th>
+                        <th scope="col" class="w-1/5 p-2">Role</th>
+                        <th scope="col" class="w-1/5 p-2">Rating</th>
+                        <th scope="col" class="" </tr>
+                </thead>
+                <tbody>
+                    @foreach (var player in Model.TournamentPlayers)
+                    {
+                        <tr class="h-16 bg-slate-900">
+                            <td class="p-2">@player.ID</td>
+                            <td class="p-2">@player.Team</td>
+                            <td class="p-2">@player.Role</td>
+                            <td class="p-2"></td>
+                            <td class="text-center">
+                                <a asp-page="/Research/Lookup" asp-route-year="@Model.Year"
+                                    asp-route-tournamentId="@Model.TournamentId" asp-route-playerName="@player.Player"
+                                    class="rounded-full bg-slate-600 p-1 hover:bg-slate-700 hover:text-gray-300"
+                                    type="button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="h-8 w-8">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m5.231 13.481L15 17.25m-4.5-15H5.625c-.621 0-1.125.504-1.125 1.125v16.5c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Zm3.75 11.625a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+                                    </svg>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

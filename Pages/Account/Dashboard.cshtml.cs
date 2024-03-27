@@ -137,28 +137,4 @@ public class DashboardModel : PageModel
 
         return RedirectToPage("/Account/Dashboard");
     }
-
-    public IActionResult OnPostDecrementDayAsync()
-    {
-        _demoService.DecrementDay();
-        return RedirectToPage("/Account/Dashboard");
-    }
-
-    public IActionResult OnPostDecrementMonthAsync()
-    {
-        _demoService.DecrementMonth();
-        return RedirectToPage("/Account/Dashboard");
-    }
-
-    public IActionResult OnPostIncrementDayAsync()
-    {
-        _demoService.IncrementDay();
-        return RedirectToPage("/Account/Dashboard");
-    }
-
-    public IActionResult OnPostIncrementMonthAsync()
-    {
-        _demoService.IncrementMonth();
-        return RedirectToPage("/Account/Dashboard");
-    }
 }

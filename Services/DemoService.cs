@@ -2,46 +2,20 @@ namespace FantasyApp.Services;
 
 public class DemoService: IDemoService
 {
-    public DateTime CurrentDate;
+    private readonly DateTime _currentDate;
 
     public DemoService()
     {
-        CurrentDate = DateTime.Now;
+        _currentDate = new DateTime(2023, 1, 20);
     }
 
     public DateTime GetCurrentDate()
     {
-        return CurrentDate;
-    }
-
-    public void IncrementMonth()
-    {
-        CurrentDate = CurrentDate.AddMonths(1);
-    }
-
-    public void DecrementMonth()
-    {
-        CurrentDate = CurrentDate.AddMonths(-1);
-    }
-
-    public void IncrementDay()
-    {
-        CurrentDate = CurrentDate.AddDays(1);
-    }
-
-    public void DecrementDay()
-    {
-        CurrentDate = CurrentDate.AddDays(-1);
+        return _currentDate;
     }
 }
 
 public interface IDemoService
 {
     public DateTime GetCurrentDate();
-
-    public void IncrementMonth();
-    public void DecrementMonth();
-
-    public void IncrementDay();
-    public void DecrementDay();
 }

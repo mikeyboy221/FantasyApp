@@ -1,0 +1,120 @@
+@page
+@model TournamentModel
+
+@* <div id="join-tournament-modal" tabindex="-1" aria-hidden="true" class="hidden z-50 fixed w-full">
+  <div class="relative w-full max-w-md p-4">
+    <div class="relative rounded-lg shadow bg-slate-800 w-full">
+      <!-- Modal header -->
+      <div class="flex items-center justify-between rounded-t p-4 md:p-5 border-gray-600">
+        <h3 class="text-xl font-semibold text-white">Join league</h3>
+
+        <p></p>
+
+        <button type="button" data-modal-target="join-tournament-modal" data-modal-hide="join-tournament-modal"
+          class="end-2.5 ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm  hover:bg-gray-600 hover:text-white">
+          <svg class="h-3 w-3 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 14 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="p-4 md:p-5">
+        <form method="post" class="space-y-4">
+          <input type="hidden" asp-for="UserId" />
+          <input type="hidden" asp-for="UserTournamentId" />
+          <input type="hidden" asp-for="TournamentId" />
+          <button type="submit" class="form-submit">Join League</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div> *@
+
+<div class="mx-auto flex flex-col items-center">
+  <div class="absolute h-60 w-full bg-gradient-to-b from-slate-800"></div>
+
+  <!-- Control bar -->
+  <div class="fixed flex w-full items-center justify-between p-4">
+    <!-- Exit button -->
+    <a asp-page="/Account/Dashboard"
+      class="relative aspect-square h-fit w-fit items-center justify-center rounded-full bg-slate-900 p-2 text-white">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="h-6 w-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+      </svg>
+    </a>
+
+    <!-- Join Button -->
+    <button type="button" data-modal-target="join-tournament-modal" data-modal-show="join-tournament-modal"
+      class="relative h-fit w-fit items-center justify-center rounded-full bg-slate-900 p-2 px-8 text-white"> Join
+    </button>
+  </div>
+
+  <!-- Main container -->
+  <div class="container absolute m-4 max-w-4xl translate-y-24">
+    <!-- Header -->
+    <div class="flex flex-col space-y-4">
+      <div class="flex justify-between items-center">
+        <p class="text-4xl text-white w-fit">@Model.UserTournament.Name</p>
+        <p class="text-white text-2xl">Starting: @Model.Tournament.DateStart.ToString()</p>
+      </div>
+
+      <div>
+        <p class="text-md mx-auto grid w-full max-w-7xl grid-cols-1 gap-4 py-2 text-gray-400">@Model.UserTournament.Description</p>
+      </div>
+
+      <div class="flex w-full py-2 space-x-4">
+        @if (Model.PageType == "details")
+        {
+          <a class="tournament-navbar-selected" asp-page="/Tournament/Tournament"
+            asp-route-userTournamentId="@Model.UserTournamentId" asp-route-tournamentId="@Model.TournamentId"
+            asp-route-pageType="details">
+            Details</a>
+
+          <a class="tournament-navbar" asp-page="/Tournament/Tournament" asp-route-userTournamentId="@Model.UserTournamentId"
+            asp-route-tournamentId="@Model.TournamentId" asp-route-pageType="live">Live</a>
+        }
+        else
+        {
+          <a class="tournament-navbar" asp-page="/Tournament/Tournament" asp-route-userTournamentId="@Model.UserTournamentId"
+            asp-route-tournamentId="@Model.TournamentId" asp-route-pageType="details">
+            Details</a>
+
+          <a class="tournament-navbar-selected" asp-page="/Tournament/Tournament"
+            asp-route-userTournamentId="@Model.UserTournamentId" asp-route-tournamentId="@Model.TournamentId"
+            asp-route-pageType="live">Live</a>
+        }
+
+      </div>
+
+      <hr class="opacity-10" />
+    </div>
+
+
+    <!-- Container -->
+    <div class="w-full bg-white bg-opacity-5 px-4">
+      @if (Model.PageType == "details")
+      {
+        @await Component.InvokeAsync("TournamentDetails",  new
+        {
+
+        })
+      }
+      else if (Model.PageType == "live")
+      {
+        @await Component.InvokeAsync("TournamentLive", new
+        {
+          tournamentState = Model.TournamentState,
+          userId = Model.UserId,
+          userTournament = Model.UserTournament,
+          Users = Model.Users,
+          Tournament = Model.Tournament,
+          Matches = Model.Matches,
+        })
+      }
+    </div>
+  </div>
+</div>

@@ -1042,3 +1042,4 @@ C:\Users\itsmi\Documents\Fantasy-App-School\FantasyApp - Leaguepedia\obj\Debug\n
 C:\Users\itsmi\Documents\Fantasy-App-School\FantasyApp - Leaguepedia\obj\Debug\net8.0\FantasyApp.genruntimeconfig.cache
 C:\Users\itsmi\Documents\Fantasy-App-School\FantasyApp - Leaguepedia\obj\Debug\net8.0\ref\FantasyApp.dll
 C:\Users\itsmi\Documents\Fantasy-App-School\FantasyApp - Leaguepedia\bin\Debug\net8.0\app.db
+C:\Users\itsmi\Documents\Fantasy-App-School\FantasyApp - Leaguepedia\obj\Debug\net8.0\FantasyApp.sourcelink.json

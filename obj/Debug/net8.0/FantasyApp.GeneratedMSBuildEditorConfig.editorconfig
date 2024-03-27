@@ -54,36 +54,28 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxDb21wb25lbnRzXENyZWF0ZURyYWZ0XERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Account/Components/DemoHeader/Default.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxDb21wb25lbnRzXERlbW9IZWFkZXJcRGVmYXVsdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Account/Components/TournamentCard/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxDb21wb25lbnRzXFRvdXJuYW1lbnRDYXJkXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Account/Components/TournamentDetails/Default.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxDb21wb25lbnRzXFRvdXJuYW1lbnREZXRhaWxzXERlZmF1bHQuY3NodG1s
+[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Account/Components/TournamentDetails_/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxDb21wb25lbnRzXFRvdXJuYW1lbnREZXRhaWxzX1xEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Account/Components/TournamentLive/Default.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxDb21wb25lbnRzXFRvdXJuYW1lbnRMaXZlXERlZmF1bHQuY3NodG1s
+[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Account/Components/TournamentLive_/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxDb21wb25lbnRzXFRvdXJuYW1lbnRMaXZlX1xEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Account/Dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxEYXNoYm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Account/Tournament.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxUb3VybmFtZW50LmNzaHRtbA==
+[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Account/TournamentOld.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxUb3VybmFtZW50T2xkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Account/_DashboardHeader.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxfRGFzaGJvYXJkSGVhZGVyLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Account/_ExpandedGamePartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxfRXhwYW5kZWRHYW1lUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Error.cshtml]
@@ -94,6 +86,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Research/Lookup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzZWFyY2hcTG9va3VwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Shared/Components/UpcomingMatches/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXENvbXBvbmVudHNcVXBjb21pbmdNYXRjaGVzXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -102,12 +98,28 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Shared/_NavBarIdentityPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9OYXZCYXJJZGVudGl0eVBhcnRpYWwuY3NodG1s
+[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Shared/_NavBarPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9OYXZCYXJQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Tournament/Components/TournamentDetails/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG91cm5hbWVudFxDb21wb25lbnRzXFRvdXJuYW1lbnREZXRhaWxzXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Tournament/Components/TournamentLive/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG91cm5hbWVudFxDb21wb25lbnRzXFRvdXJuYW1lbnRMaXZlXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Tournament/Tournament.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG91cm5hbWVudFxUb3VybmFtZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Tournament/_ExpandedGamePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG91cm5hbWVudFxfRXhwYW5kZWRHYW1lUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/_ViewImports.cshtml]

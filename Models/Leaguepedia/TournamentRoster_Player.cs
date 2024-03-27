@@ -12,6 +12,9 @@ public class TournamentRoster_Player
 
     public string Team { get; set; }
 
+    [System.Text.Json.Serialization.JsonPropertyName("Short")]
+    public string TeamShort { get; set; }
+
     // Handles the case where player has multiple roles
     public string Role { get; set; }
     public List<string> Roles  {

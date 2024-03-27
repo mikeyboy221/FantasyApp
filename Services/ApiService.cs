@@ -1,14 +1,6 @@
-using System.Text.RegularExpressions;
-using System.Collections.Generic;
-using System.Collections;
-using Newtonsoft.Json.Linq;
+using System.Text.Json;
 
 using FantasyApp.Models;
-using System.ComponentModel;
-using Newtonsoft.Json.Converters;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using System.Runtime.CompilerServices;
-using System.Text.Json;
 
 namespace FantasyApp.Services;
 
@@ -80,22 +72,12 @@ public class ApiService : IApiService, IDisposable
 
     public async Task<List<Models.Leaguepedia.Tournament>> GetLeaguepediaUpcomingTournaments(DateOnly dateStart)
     {
-        Console.WriteLine(dateStart);
-
         var startAt = dateStart.ToString("yyyy-MM-dd");
         var endAt = dateStart.AddYears(1).ToString("yyyy-MM-dd");
 
         var url = "/GetUpcomingTournaments?dateStart="+startAt+"&dateEnd="+endAt;
         return await GetLeaguepediaApiResponse<List<Models.Leaguepedia.Tournament>>(url) ?? new List<Models.Leaguepedia.Tournament>();
     }
-
-    public async Task<Models.Leaguepedia.Tournament> GetLeaguepediaTournament(int tournamentId)
-    {
-        var url = "/Tournament?tournamentId="+tournamentId;
-        return await GetLeaguepediaApiResponse<Models.Leaguepedia.Tournament>(url) ?? new Models.Leaguepedia.Tournament();
-    }
-
-    public Models.Leaguepedia.Tournament Tournament;
 
     public async Task<Models.Leaguepedia.Tournament> GetLeaguepediaTournament(string tournamentId)
     {
@@ -135,6 +117,14 @@ public class ApiService : IApiService, IDisposable
         return await GetLeaguepediaApiResponse<List<Models.Leaguepedia.MatchGame>>(url) ?? new List<Models.Leaguepedia.MatchGame>();
     }
 
+    public async Task<Models.Leaguepedia.PlayerStats> GetPlayerStats(string playerName, string tournamentId)
+    {
+        Console.WriteLine("API CALL: "+playerName+" "+tournamentId);
+
+        var url = "/PlayerStats?playerName="+playerName+"&tournamentId="+tournamentId;
+        return await GetLeaguepediaApiResponse<Models.Leaguepedia.PlayerStats>(url) ?? new Models.Leaguepedia.PlayerStats();
+    }
+
     public void Dispose()
     {
         client.Dispose();
@@ -153,4 +143,7 @@ public interface IApiService
     // Matches
     public Task<List<Models.Leaguepedia.TournamentMatch>> GetMatchScheduleForTournament(string tournamentId);
     public Task<List<Models.Leaguepedia.MatchGame>> GetMatchGames(string matchId);
+
+    // Players
+    public Task<Models.Leaguepedia.PlayerStats> GetPlayerStats(string playerName, string tournamentId);
 }
