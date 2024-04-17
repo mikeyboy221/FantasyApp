@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 
 using FantasyApp.Data;
 using FantasyApp.Services;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +23,7 @@ builder.Services.AddRazorPages(options =>
 
 builder.Services.AddSingleton<IApiService, ApiService>();
 builder.Services.AddSingleton<IDemoService, DemoService>();
+builder.Services.AddSingleton<IPointsService, PointsService>();
 
 var app = builder.Build();
 

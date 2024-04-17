@@ -1,7 +1,7 @@
 @page
 @model TournamentModel
 
-@* <div id="join-tournament-modal" tabindex="-1" aria-hidden="true" class="hidden z-50 fixed w-full">
+<div id="join-tournament-modal" tabindex="-1" aria-hidden="true" class="hidden z-50 fixed w-full">
   <div class="relative w-full max-w-md p-4">
     <div class="relative rounded-lg shadow bg-slate-800 w-full">
       <!-- Modal header -->
@@ -22,7 +22,12 @@
 
       <!-- Modal body -->
       <div class="p-4 md:p-5">
-        <form method="post" class="space-y-4">
+        <form method="post"
+          asp-page="/Tournament/Tournament"
+          asp-route-userTournamentId="@Model.UserTournamentId"
+          asp-route-tournamentId="@Model.TournamentId"
+          asp-page-handler="JoinTournament" class="space-y-4"
+        >
           <input type="hidden" asp-for="UserId" />
           <input type="hidden" asp-for="UserTournamentId" />
           <input type="hidden" asp-for="TournamentId" />
@@ -31,7 +36,7 @@
       </div>
     </div>
   </div>
-</div> *@
+</div>
 
 <div class="mx-auto flex flex-col items-center">
   <div class="absolute h-60 w-full bg-gradient-to-b from-slate-800"></div>
@@ -48,9 +53,15 @@
     </a>
 
     <!-- Join Button -->
-    <button type="button" data-modal-target="join-tournament-modal" data-modal-show="join-tournament-modal"
+    @if (
+      Model.UserTournamentTicket == null
+      && Model.TournamentState == 0
+      && Model.UserTournamentTickets.Count < Model.UserTournament.MaxParticipants
+    ) {
+      <button type="button" data-modal-target="join-tournament-modal" data-modal-show="join-tournament-modal"
       class="relative h-fit w-fit items-center justify-center rounded-full bg-slate-900 p-2 px-8 text-white"> Join
-    </button>
+      </button>
+    }
   </div>
 
   <!-- Main container -->
@@ -93,7 +104,6 @@
       <hr class="opacity-10" />
     </div>
 
-
     <!-- Container -->
     <div class="w-full bg-white bg-opacity-5 px-4">
       @if (Model.PageType == "details")
@@ -110,7 +120,6 @@
           tournamentState = Model.TournamentState,
           userId = Model.UserId,
           userTournament = Model.UserTournament,
-          Users = Model.Users,
           Tournament = Model.Tournament,
           Matches = Model.Matches,
         })

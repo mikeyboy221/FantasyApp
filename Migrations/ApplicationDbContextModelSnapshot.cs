@@ -44,7 +44,7 @@ namespace FantasyApp.Migrations
 
                     b.HasKey("UserTournamentTicketId");
 
-                    b.ToTable("TicketDraft");
+                    b.ToTable("TicketDraft", (string)null);
                 });
 
             modelBuilder.Entity("FantasyApp.Data.Entities.UserTournament", b =>
@@ -75,7 +75,7 @@ namespace FantasyApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("UserTournament");
+                    b.ToTable("UserTournament", (string)null);
                 });
 
             modelBuilder.Entity("FantasyApp.Data.Entities.UserTournamentTicket", b =>
@@ -95,7 +95,7 @@ namespace FantasyApp.Migrations
 
                     b.HasIndex("UserTournamentId");
 
-                    b.ToTable("UserTournamentTicket");
+                    b.ToTable("UserTournamentTicket", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

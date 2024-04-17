@@ -1,0 +1,30 @@
+@model IEnumerable<FantasyApp.Pages.Tournament.UserScore>
+
+<div>
+    <h1 class="heading text-white">User Scores</h1>
+    <ol>
+        @foreach (var userScore in Model)
+        {
+            <li class="pb-3 sm:pb-4">
+            <div class="flex items-center space-x-4 rtl:space-x-reverse">
+                <div class="flex-shrink-0">
+                    <img class="h-8 w-8 rounded-full" src="/docs/images/people/profile-picture-1.jpg"
+                        alt="Neil image" />
+                </div>
+                <div class="min-w-0 flex-1">
+                    <p class="truncate text-sm font-medium text-white">@userScore.User.UserName</p>
+                    <p class="truncate text-sm text-gray-400">@userScore.User.Email</p>
+                </div>
+                <div class="flex pr-10">
+                    <img class="player-icon" src="~/images/profile.png" alt="player image" />
+                    <img class="player-icon" src="~/images/profile.png" alt="player image" />
+                    <img class="player-icon" src="~/images/profile.png" alt="player image" />
+                    <img class="player-icon" src="~/images/profile.png" alt="player image" />
+                    <img class="player-icon" src="~/images/profile.png" alt="player image" />
+                </div>
+                <div class="inline-flex items-center text-base font-semibold text-white">@userScore.Scores.Values.Sum()</div>
+            </div>
+        </li>
+        }
+    </ol>
+</div>

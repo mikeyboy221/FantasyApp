@@ -1,158 +1,82 @@
 @model FantasyApp.ViewComponents.TournamentLiveModel
 
 <script src="~/js/tournamentLive.js"></script>
+<script src="~/js/getUserScores.js"></script>
 
-Live!
-@*
-@if (Model.UserHasTicket)
-{
-    <div>
-
-        <!-- Completed drafts -->
-        <div class="h-sc">
-            <h1 class="heading text-white">Completed Drafts</h1>
-            <ol>
-                @foreach (var userAndDraft in Model.UsersAndDrafts)
-                {
-                    <li class="pb-3 sm:pb-4">
-                    <div class="flex items-center space-x-4 rtl:space-x-reverse">
-                        <div class="flex-shrink-0">
-                            <img class="h-8 w-8 rounded-full" src="/docs/images/people/profile-picture-1.jpg"
-                                alt="Neil image" />
-                        </div>
-                        <div class="min-w-0 flex-1">
-                            <p class="truncate text-sm font-medium text-white">@userAndDraft.User.UserName</p>
-                            <p class="truncate text-sm text-gray-400">@userAndDraft.User.Email</p>
-                        </div>
-                        <div class="flex pr-10">
-                            <img class="player-icon" src="~/images/profile.png" alt="player image" />
-                            <img class="player-icon" src="~/images/profile.png" alt="player image" />
-                            <img class="player-icon" src="~/images/profile.png" alt="player image" />
-                            <img class="player-icon" src="~/images/profile.png" alt="player image" />
-                            <img class="player-icon" src="~/images/profile.png" alt="player image" />
-                        </div>
-                        <div class="inline-flex items-center text-base font-semibold text-white">10.8</div>
-                    </div>
-                </li>
-                }
-            </ol>
-        </div>
-
-
-        <h1 class="heading text-white">Schedule</h1>
-            <div class="space-y-6">
-                @foreach (var match in Model.Matches)
-                {
-                    <!-- Match Title -->
-                    <div class="flex w-full justify-between space-x-8 text-white">
-                        <!-- Status -->
-                        <div class="flex items-center space-x-8 rounded-lg bg-black px-4 py-2">
-                            @if (match.HasFinished)
-                            {
-                                <div class="flex aspect-square h-8 w-8 items-center justify-center rounded-full bg-green-500">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                                        stroke="currentColor" class="h-6 w-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                                    </svg>
-                                </div>
-                            }
-                            else
-                            {
-                                <div class="flex aspect-square h-8 w-8 items-center justify-center rounded-full bg-amber-500">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                                        stroke="currentColor" class="h-6 w-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                                    </svg>
-                                </div>
-                            }
-
-                            <div class="flex flex-col items-center justify-center text-white">
-                                <a id="Date">@match.DateTime_UTC.ToString("dd/MM/yy")</a>
-                                <a id="Time" class="font-bold">@match.DateTime_UTC.ToString("hh:mm")</a>
-                            </div>
-                        </div>
-
-                        <!-- Tournament  -->
-                        <div class="flex w-full rounded-md bg-slate-800 text-white">
-                            <!-- Matchup -->
-                            <div class="flex space-x-6 w-4/5 justify-center items-center">
-                                <!-- Team 1 -->
-                                <div class="w-2/5 text-end">@match.Team1</div>
-
-                                <!-- vs -->
-                                <div class="w-1/5 text-center">Vs</div>
-
-                                <!-- Team 2 -->
-                                <div class="w-2/5 text-start">@match.Team2</div>
-                            </div>
-
-                            <!-- Get Match Results Button -->
-                            @if (match.HasFinished)
-                            {
-                                <div class="flex w-1/5 justify-center items-center">
-                                    <button onclick="expandMatchResults('@match.UniqueMatch')">
-                                        <div class="bg-black bg-opacity-20 aspect-square h-10 flex justify-center items-center rounded-full">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                                stroke="currentColor" class="w-6 h-6">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                                            </svg>
-                                        </div>
-                                    </button>
-                                </div>
-                            }
-                        </div>
-                    </div>
-
-                    <!-- Expanded Math -->
-                    <div id="@match.UniqueMatch" class="hidden m-2 rounded-md bg-slate-700 p-4">
-                    </div>
-                }
-            </div>
-
-            <script type="text/javascript">
-                initialize();
-            </script>
-    </div>
-}
-else
-{
-    <div>
-        You need a ticket to view this resource!
-    </div>
-} *@
-
+<!-- Stepper -->
 <div>
-    <!-- Stepper -->
     <ol class="flex w-full items-center py-4 text-center text-sm font-medium text-gray-400 sm:text-base">
-        <li class="draft-stepper-selected">
-            <span class="draft-stepper-container">
-                <svg class="me-2.5 h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                </svg>
-                Draft
-            </span>
+        <li id="StepperDraft" class="flex items-center px-4">
+            <span class="me-2">1</span>
+            Draft
         </li>
-        <li class="draft-stepper-default">
-            <span class="draft-stepper-container">
-                <span class="me-2">2</span>
-                Game
-            </span>
+        <li id="StepperHorizontalLine1" class="w-full bg-gray-400 h-1 rounded-full">
+
         </li>
-        <li class="flex items-center">
+        <li id="StepperGame" class="flex items-center px-4">
+            <span class="me-2">2</span>
+            Game
+        </li>
+        <li id="StepperHorizontalLine2" class="w-full bg-gray-400 h-1 rounded-full">
+
+        </li>
+        <li id="StepperResults" class="flex items-center px-4">
             <span class="me-2">3</span>
             Results
         </li>
     </ol>
 
+    @Html.Hidden("tournamentState", Model.TournamentState)
+    <script>
+        var tournamentState = document.getElementById("tournamentState").value;
 
-    <!-- Your draft -->
-    @if (Model.UserTicketDraft != null)
+        var stepperDraft = document.getElementById("StepperDraft");
+        var stepperHorizontalLine1 = document.getElementById("StepperHorizontalLine1");
+        var stepperGame = document.getElementById("StepperGame");
+        var stepperHorizontalLine2 = document.getElementById("StepperHorizontalLine2");
+        var stepperResults = document.getElementById("StepperResults");
+
+        switch (tournamentState) {
+            case "0":
+                stepperDraft.classList.add("text-blue-600");
+                break;
+            case "1":
+                stepperDraft.classList.add("text-blue-600");
+                stepperHorizontalLine1.classList.remove("bg-gray-400");
+                stepperHorizontalLine1.classList.add("bg-blue-600");
+                stepperGame.classList.add("text-blue-600");
+                break;
+            case "2":
+                stepperDraft.classList.add("text-blue-600");
+                stepperHorizontalLine1.classList.remove("bg-gray-400");
+                stepperHorizontalLine1.classList.add("bg-blue-600");
+                stepperGame.classList.add("text-blue-600");
+                stepperHorizontalLine2.classList.remove("bg-gray-400");
+                stepperHorizontalLine2.classList.add("bg-blue-600");
+                stepperResults.classList.add("text-blue-600");
+                break;
+        }
+    </script>
+</div>
+
+@{
+    var userHasDraftedTeam = Model.UserTicketDraft?.Count > 0;
+}
+
+@if (Model.UserHasTicket) {
+    <h1 class="heading text-white">Your draft</h1>
+    @if (!userHasDraftedTeam)
     {
-        <h1 class="heading text-white">Your draft</h1>
+        @if (Model.TournamentState == 0) {
+            @await Component.InvokeAsync("CreateDraft", new
+            {
+                TournamentId = Model.TournamentId,
+                UserTournamentId = Model.UserTournamentId,
+            })
+        }
+    }
+    else
+    {
         <div class="flex-cols-5 flex h-48 w-full justify-between space-x-4 text-white">
             <div id="@Model.UserTicketDraft["Top"].ID" class="drafted-player-card">
                 <img class="absolute bottom-0 object-contain p-2" src="~/images/missingimage.png" />
@@ -200,15 +124,232 @@ else
             </div>
         </div>
     }
-    else
-    {
-        @* <h1 class="heading text-white">Your Draft</h1>
-        @await Component.InvokeAsync("CreateDraft", new
-        {
-            TournamentId = Model.TournamentId,
-            UserTournamentId = Model.UserTournamentId,
-        }) *@
-    }
 
-</div>
+    <!-- User scores -->
+    <div id="UserScores">
+        @if (Model.TournamentState == 0) {
+            <h1 class="heading text-white">Completed Drafts</h1>
+            <ol>
+                @foreach (var userAndDraft in Model.UsersAndDrafts)
+                {
+                    if (userAndDraft.TicketDraft == null)
+                    {
+                        continue;
+                    }
+
+                    <li class="pb-3 sm:pb-4">
+                        <div class="flex items-center space-x-4 rtl:space-x-reverse">
+                            <div class="flex-shrink-0">
+                                <img class="h-8 w-8 rounded-full" src="/docs/images/people/profile-picture-1.jpg"
+                                    alt="Neil image" />
+                            </div>
+                            <div class="min-w-0 flex-1">
+                                <p class="truncate text-sm font-medium text-white">@userAndDraft.User.UserName</p>
+                                <p class="truncate text-sm text-gray-400">@userAndDraft.User.Email</p>
+                            </div>
+                            <div class="flex pr-10">
+                                <img class="player-icon" src="~/images/profile.png" alt="player image" />
+                                <img class="player-icon" src="~/images/profile.png" alt="player image" />
+                                <img class="player-icon" src="~/images/profile.png" alt="player image" />
+                                <img class="player-icon" src="~/images/profile.png" alt="player image" />
+                                <img class="player-icon" src="~/images/profile.png" alt="player image" />
+                            </div>
+                        </div>
+                    </li>
+                }
+            </ol>
+        } else {
+            <div id = "UserScores" class="flex justify-center text-white text-xl">
+                <div class="spinner ">
+
+                </div>
+            </div>
+
+            <script>
+                var url = window.location.href + "&handler=UserScores";
+
+                fetch(url)
+                    .then(response => {
+                        return response.text();
+                    })
+                    .then((result) => {
+                        var userScoresDiv = document.getElementById("UserScores");
+                        userScoresDiv.innerHTML = result;
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    });
+            </script>
+        }
+    </div>
+
+    <!-- Schedule -->
+    <h1 class="heading text-white">Schedule</h1>
+    <div class="space-y-6">
+        @foreach (var match in Model.Matches)
+        {
+            <!-- Match Title -->
+            <div class="flex w-full justify-between space-x-8 text-white">
+                <!-- Status -->
+                <div class="flex items-center space-x-8 rounded-lg bg-black px-4 py-2">
+                    @if (match.HasFinished)
+                    {
+                        <div class="flex aspect-square h-8 w-8 items-center justify-center rounded-full bg-green-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                stroke="currentColor" class="h-6 w-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="flex aspect-square h-8 w-8 items-center justify-center rounded-full bg-amber-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                stroke="currentColor" class="h-6 w-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            </svg>
+                        </div>
+                    }
+
+                    <div class="flex flex-col items-center justify-center text-white">
+                        <a id="Date">@match.DateTime_UTC.ToString("dd/MM/yy")</a>
+                        <a id="Time" class="font-bold">@match.DateTime_UTC.ToString("hh:mm")</a>
+                    </div>
+                </div>
+
+                <!-- Tournament  -->
+                <div class="flex w-full rounded-md bg-slate-800 text-white">
+                    <!-- Matchup -->
+                    <div class="flex space-x-6 w-4/5 justify-center items-center">
+                        <!-- Team 1 -->
+                        <div class="w-2/5 text-end">@match.Team1</div>
+
+                        <!-- vs -->
+                        <div class="w-1/5 text-center">Vs</div>
+
+                        <!-- Team 2 -->
+                        <div class="w-2/5 text-start">@match.Team2</div>
+                    </div>
+
+                    <!-- Get Match Results Button -->
+                    @if (match.HasFinished)
+                    {
+                        <div class="flex w-1/5 justify-center items-center">
+                            <button onclick="expandMatchResults('@match.UniqueMatch')">
+                                <div class="bg-black bg-opacity-20 aspect-square h-10 flex justify-center items-center rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                        stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                    </svg>
+                                </div>
+                            </button>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <!-- Expanded Math -->
+            <div id="@match.UniqueMatch" class="hidden m-2 rounded-md bg-slate-700 p-4">
+            </div>
+        }
+
+        <script type="text/javascript">
+            initialize();
+        </script>
+    </div>
+} else {
+    <div>
+        You need a ticket to view this resource!
+    </div>
+}
+
+@if (Model.UserHasTicket)
+{
+
+    @* <div>
+        <h1 class="heading text-white">
+            Schedule
+        </h1>
+
+        <div class="space-y-6">
+            @foreach (var match in Model.Matches)
+            {
+                <!-- Match Title -->
+                <div class="flex w-full justify-between space-x-8 text-white">
+                    <!-- Status -->
+                    <div class="flex items-center space-x-8 rounded-lg bg-black px-4 py-2">
+                        @if (match.HasFinished)
+                        {
+                            <div class="flex aspect-square h-8 w-8 items-center justify-center rounded-full bg-green-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                    stroke="currentColor" class="h-6 w-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                                </svg>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="flex aspect-square h-8 w-8 items-center justify-center rounded-full bg-amber-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                    stroke="currentColor" class="h-6 w-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                </svg>
+                            </div>
+                        }
+
+                        <div class="flex flex-col items-center justify-center text-white">
+                            <a id="Date">@match.DateTime_UTC.ToString("dd/MM/yy")</a>
+                            <a id="Time" class="font-bold">@match.DateTime_UTC.ToString("hh:mm")</a>
+                        </div>
+                    </div>
+
+                    <!-- Tournament  -->
+                    <div class="flex w-full rounded-md bg-slate-800 text-white">
+                        <!-- Matchup -->
+                        <div class="flex space-x-6 w-4/5 justify-center items-center">
+                            <!-- Team 1 -->
+                            <div class="w-2/5 text-end">@match.Team1</div>
+
+                            <!-- vs -->
+                            <div class="w-1/5 text-center">Vs</div>
+
+                            <!-- Team 2 -->
+                            <div class="w-2/5 text-start">@match.Team2</div>
+                        </div>
+
+                        <!-- Get Match Results Button -->
+                        @if (match.HasFinished)
+                        {
+                            <div class="flex w-1/5 justify-center items-center">
+                                <button onclick="expandMatchResults('@match.UniqueMatch')">
+                                    <div class="bg-black bg-opacity-20 aspect-square h-10 flex justify-center items-center rounded-full">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                            stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                        </svg>
+                                    </div>
+                                </button>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <!-- Expanded Math -->
+                <div id="@match.UniqueMatch" class="hidden m-2 rounded-md bg-slate-700 p-4">
+                </div>
+            }
+        </div>
+
+    </div> *@
+}
+else
+{
+    @* <div>
+        You need a ticket to view this resource!
+    </div> *@
+}
 

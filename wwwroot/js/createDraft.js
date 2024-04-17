@@ -92,7 +92,6 @@ function initialize() {
             var selectedOverview = document.getElementById('selected_' + role + '_overview');
             selectedOverview.classList.add('hidden');
 
-
             var selectedPlayer = selectedPlayers.find(player => player.role === role);
             selectedPlayer.playerCard.classList.remove('active');
 

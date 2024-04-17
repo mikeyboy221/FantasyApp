@@ -50,10 +50,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Account/Components/CreateDraft/Default.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxDb21wb25lbnRzXENyZWF0ZURyYWZ0XERlZmF1bHQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Account/Components/TournamentCard/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxDb21wb25lbnRzXFRvdXJuYW1lbnRDYXJkXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -106,6 +102,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Tournament/Components/CreateDraft/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG91cm5hbWVudFxDb21wb25lbnRzXENyZWF0ZURyYWZ0XERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Tournament/Components/TournamentDetails/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG91cm5hbWVudFxDb21wb25lbnRzXFRvdXJuYW1lbnREZXRhaWxzXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -120,6 +120,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Tournament/_ExpandedGamePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG91cm5hbWVudFxfRXhwYW5kZWRHYW1lUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Tournament/_UserScoresPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG91cm5hbWVudFxfVXNlclNjb3Jlc1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/_ViewImports.cshtml]

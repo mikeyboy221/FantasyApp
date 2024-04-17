@@ -13,6 +13,18 @@ public class TournamentLiveModel
     public bool UserHasTicket;
     public int TournamentState;
     public Dictionary<string, Models.Leaguepedia.TournamentRoster_Player>? UserTicketDraft;
+    public string TournamentId;
+    public string UserTournamentId;
+    public UserAndDraft[] UsersAndDrafts;
+
+    public List<Models.Leaguepedia.TournamentMatch> Matches;
+    public Models.Leaguepedia.Tournament Tournament;
+}
+
+public class UserAndDraft
+{
+    public IdentityUser User;
+    public TicketDraft TicketDraft;
 }
 
 public class TournamentLiveViewComponent: ViewComponent
@@ -22,7 +34,7 @@ public class TournamentLiveViewComponent: ViewComponent
     private readonly IDemoService _demoService;
     private readonly UserManager<IdentityUser> _userManager;
 
-    private Dictionary<string, Models.Leaguepedia.TournamentRoster_Player> _userTicketDraft;
+    private Dictionary<string, Models.Leaguepedia.TournamentRoster_Player> _userTicketDraft = [];
 
     public TournamentLiveViewComponent(
         ApplicationDbContext context,
@@ -41,7 +53,7 @@ public class TournamentLiveViewComponent: ViewComponent
         int tournamentState,
         string userId,
         UserTournament userTournament,
-        List<IdentityUser> Users,
+
         Models.Leaguepedia.Tournament Tournament,
         List<Models.Leaguepedia.TournamentMatch> Matches
     )
@@ -79,10 +91,41 @@ public class TournamentLiveViewComponent: ViewComponent
             }
         }
 
+        // Get all tournament tickets
+        var userTournamentTickets = _context.UserTournamentTicket
+            .Include(utt => utt.UserTournament) // load related UserTournament
+            .Include(utt => utt.TicketDraft) // load related TicketDraft
+            .Where(utt => utt.UserTournamentId == userTournament.Id)
+            .ToList();
+
+        // Get userIds and ticketDrafts from UserTournamentTickets
+        var usersAndTicketDrafts = userTournamentTickets
+            .Select(utt => new UserAndDraft
+            {
+                User = _context.Users.FirstOrDefault(u => u.Id == utt.UserId),
+                TicketDraft = utt.TicketDraft
+            })
+            .ToArray();
+
+        var currentDate = _demoService.GetCurrentDate();
+        Matches.ForEach(m =>
+        {
+            if (currentDate > m.DateTime_UTC)
+            {
+                m.HasFinished = true;
+            }
+        });
+
         return View(new TournamentLiveModel {
             TournamentState = tournamentState,
-            UserHasTicket = false,
+            UserHasTicket = userTournamentTicket != null,
             UserTicketDraft = _userTicketDraft,
+            TournamentId = userTournament.TournamentId,
+            UserTournamentId = userTournament.Id,
+            UsersAndDrafts = usersAndTicketDrafts,
+
+            Matches = Matches,
+            Tournament = Tournament
         });
     }
 }

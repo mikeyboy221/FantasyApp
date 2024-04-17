@@ -42,7 +42,6 @@ async function expandMatchResults(matchId) {
                 return;
             }
 
-
             matchResultsDiv.innerHTML = result;
             matchResultsDiv.classList.remove("hidden");
 

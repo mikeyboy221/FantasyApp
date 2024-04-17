@@ -98,17 +98,12 @@ public class ApiService : IApiService, IDisposable
     {
         var url = "/TournamentMatches?tournamentId="+tournamentId;
         return await GetLeaguepediaApiResponse<List<Models.Leaguepedia.TournamentMatch>>(url) ?? new List<Models.Leaguepedia.TournamentMatch>();
+    }
 
-        // var response = await client.GetAsync("http://127.0.0.1:5000"+url);
-        // response.EnsureSuccessStatusCode();
-
-        // string content = await response.Content.ReadAsStringAsync();
-        // if (!string.IsNullOrEmpty(content))
-        // {
-        //     return JsonConvert.DeserializeObject<List<Models.Leaguepedia.TournamentMatch>>(content, new IsoDateTimeConverter { DateTimeFormat = "yyyy-MM-dd HH:mm:ss"});
-        // }
-
-        // return new List<Models.Leaguepedia.TournamentMatch>();
+    public async Task<List<Models.Leaguepedia.MatchGame>> GetTournamentGames(string tournamentId)
+    {
+        var url = "/TournamentGames?tournamentId="+tournamentId;
+        return await GetLeaguepediaApiResponse<List<Models.Leaguepedia.MatchGame>>(url) ?? new List<Models.Leaguepedia.MatchGame>();
     }
 
     public async Task<List<Models.Leaguepedia.MatchGame>> GetMatchGames(string matchId)
@@ -139,6 +134,7 @@ public interface IApiService
     public Task<List<Models.Leaguepedia.Tournament>> GetLeaguepediaUpcomingTournaments(DateOnly dateStart);
     public Task<Models.Leaguepedia.Tournament> GetLeaguepediaTournament(string tournamentId);
     public Task<List<Models.Leaguepedia.TournamentRoster_Player>> GetLeaguepediaTournamentRoster(string tournamentId);
+    public Task<List<Models.Leaguepedia.MatchGame>> GetTournamentGames(string tournamentId);
 
     // Matches
     public Task<List<Models.Leaguepedia.TournamentMatch>> GetMatchScheduleForTournament(string tournamentId);

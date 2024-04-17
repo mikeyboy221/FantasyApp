@@ -37,6 +37,7 @@ public class PlayerScoreboard
     public string PlayerName { get; set; }
 
     public string Role { get; set; }
+    public string PlayerWin { get; set; }
 
     public string Champion { get; set; }
     public string Kills { get; set; }
