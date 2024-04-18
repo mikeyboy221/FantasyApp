@@ -1,0 +1,30 @@
+@model FantasyApp.Models.Leaguepedia.TournamentRoster_Player
+
+<div class="drafted-player-card">
+    <img class="absolute bottom-0 object-contain p-2" src="~/images/missingimage.png" />
+
+    @{
+        var playerId = Model.ID;
+        var scoreDivId = "Score" + playerId;
+    }
+    <div class="absolute flex w-full flex-col items-center justify-center pt-2">
+        <p class="text-center">@Model.Player</p>
+        <p id=@scoreDivId class="text-center text-lg font-bold">400</p>
+    </div>
+
+    <script>
+        var url = window.location.href + "&handler=DraftedPlayerScore" + "&playerId=@playerId" ;
+
+        fetch(url)
+            .then(response => {
+                return response.text();
+            })
+            .then((result) => {
+                var score = document.getElementById("@scoreDivId");
+                score.innerHTML = result;
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    </script>
+</div>

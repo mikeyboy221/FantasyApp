@@ -77,51 +77,18 @@
     }
     else
     {
+        var Top = Model.UserTicketDraft["Top"];
+        var Jgl = Model.UserTicketDraft["Jgl"];
+        var Mid = Model.UserTicketDraft["Mid"];
+        var Bot = Model.UserTicketDraft["Bot"];
+        var Sup = Model.UserTicketDraft["Sup"];
+
         <div class="flex-cols-5 flex h-48 w-full justify-between space-x-4 text-white">
-            <div id="@Model.UserTicketDraft["Top"].ID" class="drafted-player-card">
-                <img class="absolute bottom-0 object-contain p-2" src="~/images/missingimage.png" />
-
-                <div class="absolute flex w-full flex-col items-center justify-center pt-2">
-                    <p class="text-center">@Model.UserTicketDraft["Top"].Player</p>
-                    <p class="text-center text-lg font-bold">200</p>
-                </div>
-            </div>
-
-            <div id="@Model.UserTicketDraft["Jgl"].ID" class="drafted-player-card">
-                <img class="absolute bottom-0 object-contain p-2" src="~/images/missingimage.png" />
-
-                <div class="absolute flex w-full flex-col items-center justify-center pt-2">
-                    <p class="text-center">@Model.UserTicketDraft["Jgl"].Player</p>
-                    <p class="text-center text-lg font-bold">200</p>
-                </div>
-            </div>
-
-            <div id="@Model.UserTicketDraft["Mid"].ID" class="drafted-player-card">
-                <img class="absolute bottom-0 object-contain p-2" src="~/images/missingimage.png" />
-
-                <div class="absolute flex w-full flex-col items-center justify-center pt-2">
-                    <p class="text-center">@Model.UserTicketDraft["Mid"].Player</p>
-                    <p class="text-center text-lg font-bold">200</p>
-                </div>
-            </div>
-
-            <div id="@Model.UserTicketDraft["Bot"].ID" class="drafted-player-card">
-                <img class="absolute bottom-0 object-contain p-2" src="~/images/missingimage.png" />
-
-                <div class="absolute flex w-full flex-col items-center justify-center pt-2">
-                    <p class="text-center">@Model.UserTicketDraft["Bot"].Player</p>
-                    <p class="text-center text-lg font-bold">200</p>
-                </div>
-            </div>
-
-            <div id="@Model.UserTicketDraft["Sup"].ID" class="drafted-player-card">
-                <img class="absolute bottom-0 object-contain p-2" src="~/images/missingimage.png" />
-
-                <div class="absolute flex w-full flex-col items-center justify-center pt-2">
-                    <p class="text-center">@Model.UserTicketDraft["Sup"].Player</p>
-                    <p class="text-center text-lg font-bold">200</p>
-                </div>
-            </div>
+            <partial name="_DraftedPlayerCard" model=Top/>
+            <partial name="_DraftedPlayerCard" model=Jgl/>
+            <partial name="_DraftedPlayerCard" model=Mid/>
+            <partial name="_DraftedPlayerCard" model=Bot/>
+            <partial name="_DraftedPlayerCard" model=Sup/>
         </div>
     }
 

@@ -7,6 +7,10 @@ using Newtonsoft.Json;
 using FantasyApp.Services;
 using FantasyApp.Data;
 using FantasyApp.Data.Entities;
+using Microsoft.CodeAnalysis.FlowAnalysis.DataFlow;
+using System.Collections;
+using Microsoft.AspNetCore.Http.HttpResults;
+using System.Text.Json.Nodes;
 
 namespace FantasyApp.Pages.Tournament;
 
@@ -123,7 +127,7 @@ public class TournamentModel: PageModel
                     {
                         HasBeenDrafted = true,
                         UserId = playerIdsAndUsers[playerId][0].Id,
-                        Score = 100
+                        Score = _pointsService.GetPointsForScorebard(teamScoreboard[role])
                     });
                 }
             }
@@ -219,12 +223,27 @@ public class TournamentModel: PageModel
         return Partial("_UserScoresPartial", _usersAndDrafts);
     }
 
-    public async Task<IActionResult> OnGetExpandMatch(string matchId)
+    public async Task<IActionResult> OnGetDraftedPlayerScore(string tournamentId, string playerId)
+    {
+        // Get player stats for the given tournament
+        List<Models.Leaguepedia.PlayerScoreboard> _playersGames = await _apiService.GetPlayerGames(playerId, tournamentId);
+
+        int score = 0;
+        foreach (var scoreboard in _playersGames)
+        {
+            score += _pointsService.GetPointsForScorebard(scoreboard);
+        }
+
+        // Return the score as a JsonObject
+        return new JsonResult(score);
+    }
+
+    public async Task<IActionResult> OnGetExpandMatch(string userTournamentId, string tournamentId, string matchId)
     {
         var matchGames = await _apiService.GetMatchGames(matchId);
         var userDrafts = await _context.TicketDraft
             .Include(td => td.UserTournamentTicket)
-            .Where(d => d.UserTournamentTicket.UserTournamentId == UserTournamentId)
+            .Where(d => d.UserTournamentTicket.UserTournamentId == userTournamentId)
             .ToListAsync();
 
         var draftedPlayers = new Dictionary<string, List<IdentityUser>>();

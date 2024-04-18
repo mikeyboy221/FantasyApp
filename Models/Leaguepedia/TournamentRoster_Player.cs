@@ -1,5 +1,4 @@
-using System.Collections.Generic;
-using System.Linq;
+using System.Text.Json.Serialization;
 
 namespace FantasyApp.Models.Leaguepedia;
 
@@ -12,7 +11,7 @@ public class TournamentRoster_Player
 
     public string Team { get; set; }
 
-    [System.Text.Json.Serialization.JsonPropertyName("Short")]
+    [JsonPropertyName("Short")]
     public string TeamShort { get; set; }
 
     // Handles the case where player has multiple roles

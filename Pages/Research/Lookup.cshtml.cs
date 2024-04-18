@@ -32,7 +32,7 @@ public class LookupModel : PageModel
     {
         //Get years from current year -1 (Skip current year because season will not have ended)
         Years = [];
-        for (var dt=DateTime.Now.AddYears(-1); dt.Year >= 2008; dt = dt.AddYears(-1))
+        for (var dt=DateTime.Now.AddYears(-1); dt.Year >= 2011; dt = dt.AddYears(-1))
         {
             Years.Add(dt.Year);
         }

@@ -112,6 +112,12 @@ public class ApiService : IApiService, IDisposable
         return await GetLeaguepediaApiResponse<List<Models.Leaguepedia.MatchGame>>(url) ?? new List<Models.Leaguepedia.MatchGame>();
     }
 
+    public async Task<List<Models.Leaguepedia.PlayerScoreboard>> GetPlayerGames(string playerId, string tournamentId)
+    {
+        var url = "/PlayerGames?playerId="+playerId+"&tournamentId="+tournamentId;
+        return await GetLeaguepediaApiResponse<List<Models.Leaguepedia.PlayerScoreboard>>(url) ?? new List<Models.Leaguepedia.PlayerScoreboard>();
+    }
+
     public async Task<Models.Leaguepedia.PlayerStats> GetPlayerStats(string playerName, string tournamentId)
     {
         Console.WriteLine("API CALL: "+playerName+" "+tournamentId);
@@ -142,4 +148,5 @@ public interface IApiService
 
     // Players
     public Task<Models.Leaguepedia.PlayerStats> GetPlayerStats(string playerName, string tournamentId);
+    public Task<List<Models.Leaguepedia.PlayerScoreboard>> GetPlayerGames(string playerId, string tournamentId);
 }

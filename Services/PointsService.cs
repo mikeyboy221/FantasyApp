@@ -1,3 +1,5 @@
+using Microsoft.Build.FileSystem;
+
 namespace FantasyApp.Services;
 
 public class PointsService : IPointsService
@@ -69,9 +71,9 @@ public class PointsService : IPointsService
             playerScores[playerName] = totalPoints;
         }
 
-        foreach(var player in playerScores)
+        foreach (var player in playerScores)
         {
-            Console.WriteLine($"{player.Key}: {player.Value}");
+            Console.WriteLine(player.Key + " " + player.Value);
         }
 
         return playerScores;
@@ -81,4 +83,5 @@ public class PointsService : IPointsService
 public interface IPointsService
 {
     public Dictionary<string, int> ProcessPlayerDraft(List<string> userDraft, List<Models.Leaguepedia.MatchGame> tournamentGames);
+    public int GetPointsForScorebard(Models.Leaguepedia.PlayerScoreboard scoreboard);
 }
