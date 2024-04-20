@@ -7131,19 +7131,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\itsmi\\.nuget\\packages\\": {}
+    "/Users/mikeypawluk/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\itsmi\\Documents\\Fantasy-App-School\\FantasyApp - Leaguepedia\\FantasyApp.csproj",
+      "projectUniqueName": "/Users/mikeypawluk/Documents/CS_SCHOOL/FantasyApp/v6/FantasyApp/FantasyApp.csproj",
       "projectName": "FantasyApp",
-      "projectPath": "C:\\Users\\itsmi\\Documents\\Fantasy-App-School\\FantasyApp - Leaguepedia\\FantasyApp.csproj",
-      "packagesPath": "C:\\Users\\itsmi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\itsmi\\Documents\\Fantasy-App-School\\FantasyApp - Leaguepedia\\obj\\",
+      "projectPath": "/Users/mikeypawluk/Documents/CS_SCHOOL/FantasyApp/v6/FantasyApp/FantasyApp.csproj",
+      "packagesPath": "/Users/mikeypawluk/.nuget/packages/",
+      "outputPath": "/Users/mikeypawluk/Documents/CS_SCHOOL/FantasyApp/v6/FantasyApp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\itsmi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/mikeypawluk/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -7215,7 +7215,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

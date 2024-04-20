@@ -77,6 +77,14 @@ public class DashboardModel : PageModel
         return $"Today is the {GetDayWithSuffix(currentDate.Day)} of {currentDate:MMMM}";
     }
 
+    public async Task<string> GetUserStringAsync()
+    {
+        var user = await GetCurrentUserAsync();
+        var username = user.UserName;
+
+        return "Hello " + username;
+    }
+
     public async Task<IActionResult> OnGetAsync()
     {
         var user = await _userManager.GetUserAsync(User);

@@ -65,7 +65,7 @@ public class PlayerStats
             case "Damage":
                 return Scoreboards.Sum(s => int.Parse(s.DamageToChampions));
             case "Gold":
-                return Scoreboards.Sum(s => int.Parse(s.Kills));
+                return Scoreboards.Sum(s => int.Parse(s.Gold));
             default:
                 return 0;
         }

@@ -17,127 +17,127 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FantasyApp
 build_property.RootNamespace = FantasyApp
-build_property.ProjectDir = C:\Users\itsmi\Documents\Fantasy-App-School\FantasyApp - Leaguepedia\
+build_property.ProjectDir = /Users/mikeypawluk/Documents/CS_SCHOOL/FantasyApp/v6/FantasyApp/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\itsmi\Documents\Fantasy-App-School\FantasyApp - Leaguepedia
+build_property.MSBuildProjectDirectory = /Users/mikeypawluk/Documents/CS_SCHOOL/FantasyApp/v6/FantasyApp
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Areas/Identity/Pages/Account/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+[/Users/mikeypawluk/Documents/CS_SCHOOL/FantasyApp/v6/FantasyApp/Areas/Identity/Pages/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9Mb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Areas/Identity/Pages/Account/Register.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+[/Users/mikeypawluk/Documents/CS_SCHOOL/FantasyApp/v6/FantasyApp/Areas/Identity/Pages/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9SZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Areas/Identity/Pages/Account/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
+[/Users/mikeypawluk/Documents/CS_SCHOOL/FantasyApp/v6/FantasyApp/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9fVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+[/Users/mikeypawluk/Documents/CS_SCHOOL/FantasyApp/v6/FantasyApp/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Areas/Identity/Pages/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[/Users/mikeypawluk/Documents/CS_SCHOOL/FantasyApp/v6/FantasyApp/Areas/Identity/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Areas/Identity/Pages/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+[/Users/mikeypawluk/Documents/CS_SCHOOL/FantasyApp/v6/FantasyApp/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Account/Components/TournamentCard/Default.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxDb21wb25lbnRzXFRvdXJuYW1lbnRDYXJkXERlZmF1bHQuY3NodG1s
+[/Users/mikeypawluk/Documents/CS_SCHOOL/FantasyApp/v6/FantasyApp/Pages/Account/Components/TournamentCard/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWNjb3VudC9Db21wb25lbnRzL1RvdXJuYW1lbnRDYXJkL0RlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Account/Components/TournamentDetails_/Default.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxDb21wb25lbnRzXFRvdXJuYW1lbnREZXRhaWxzX1xEZWZhdWx0LmNzaHRtbA==
+[/Users/mikeypawluk/Documents/CS_SCHOOL/FantasyApp/v6/FantasyApp/Pages/Account/Components/TournamentDetails_/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWNjb3VudC9Db21wb25lbnRzL1RvdXJuYW1lbnREZXRhaWxzXy9EZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Account/Components/TournamentLive_/Default.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxDb21wb25lbnRzXFRvdXJuYW1lbnRMaXZlX1xEZWZhdWx0LmNzaHRtbA==
+[/Users/mikeypawluk/Documents/CS_SCHOOL/FantasyApp/v6/FantasyApp/Pages/Account/Components/TournamentLive_/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWNjb3VudC9Db21wb25lbnRzL1RvdXJuYW1lbnRMaXZlXy9EZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Account/Dashboard.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxEYXNoYm9hcmQuY3NodG1s
+[/Users/mikeypawluk/Documents/CS_SCHOOL/FantasyApp/v6/FantasyApp/Pages/Account/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWNjb3VudC9EYXNoYm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Account/TournamentOld.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxUb3VybmFtZW50T2xkLmNzaHRtbA==
+[/Users/mikeypawluk/Documents/CS_SCHOOL/FantasyApp/v6/FantasyApp/Pages/Account/TournamentOld.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWNjb3VudC9Ub3VybmFtZW50T2xkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Account/_DashboardHeader.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxfRGFzaGJvYXJkSGVhZGVyLmNzaHRtbA==
+[/Users/mikeypawluk/Documents/CS_SCHOOL/FantasyApp/v6/FantasyApp/Pages/Account/_DashboardHeader.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWNjb3VudC9fRGFzaGJvYXJkSGVhZGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+[/Users/mikeypawluk/Documents/CS_SCHOOL/FantasyApp/v6/FantasyApp/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+[/Users/mikeypawluk/Documents/CS_SCHOOL/FantasyApp/v6/FantasyApp/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Research/Lookup.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzZWFyY2hcTG9va3VwLmNzaHRtbA==
+[/Users/mikeypawluk/Documents/CS_SCHOOL/FantasyApp/v6/FantasyApp/Pages/Research/Lookup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVzZWFyY2gvTG9va3VwLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Shared/Components/UpcomingMatches/Default.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXENvbXBvbmVudHNcVXBjb21pbmdNYXRjaGVzXERlZmF1bHQuY3NodG1s
+[/Users/mikeypawluk/Documents/CS_SCHOOL/FantasyApp/v6/FantasyApp/Pages/Shared/Components/UpcomingMatches/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL0NvbXBvbmVudHMvVXBjb21pbmdNYXRjaGVzL0RlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Shared/_LoginPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+[/Users/mikeypawluk/Documents/CS_SCHOOL/FantasyApp/v6/FantasyApp/Pages/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Shared/_NavBarPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9OYXZCYXJQYXJ0aWFsLmNzaHRtbA==
+[/Users/mikeypawluk/Documents/CS_SCHOOL/FantasyApp/v6/FantasyApp/Pages/Shared/_NavBarPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19OYXZCYXJQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[/Users/mikeypawluk/Documents/CS_SCHOOL/FantasyApp/v6/FantasyApp/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Tournament/Components/CreateDraft/Default.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG91cm5hbWVudFxDb21wb25lbnRzXENyZWF0ZURyYWZ0XERlZmF1bHQuY3NodG1s
+[/Users/mikeypawluk/Documents/CS_SCHOOL/FantasyApp/v6/FantasyApp/Pages/Tournament/Components/CreateDraft/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVG91cm5hbWVudC9Db21wb25lbnRzL0NyZWF0ZURyYWZ0L0RlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Tournament/Components/TournamentDetails/Default.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG91cm5hbWVudFxDb21wb25lbnRzXFRvdXJuYW1lbnREZXRhaWxzXERlZmF1bHQuY3NodG1s
+[/Users/mikeypawluk/Documents/CS_SCHOOL/FantasyApp/v6/FantasyApp/Pages/Tournament/Components/TournamentDetails/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVG91cm5hbWVudC9Db21wb25lbnRzL1RvdXJuYW1lbnREZXRhaWxzL0RlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Tournament/Components/TournamentLive/Default.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG91cm5hbWVudFxDb21wb25lbnRzXFRvdXJuYW1lbnRMaXZlXERlZmF1bHQuY3NodG1s
+[/Users/mikeypawluk/Documents/CS_SCHOOL/FantasyApp/v6/FantasyApp/Pages/Tournament/Components/TournamentLive/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVG91cm5hbWVudC9Db21wb25lbnRzL1RvdXJuYW1lbnRMaXZlL0RlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Tournament/Tournament.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG91cm5hbWVudFxUb3VybmFtZW50LmNzaHRtbA==
+[/Users/mikeypawluk/Documents/CS_SCHOOL/FantasyApp/v6/FantasyApp/Pages/Tournament/Tournament.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVG91cm5hbWVudC9Ub3VybmFtZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Tournament/_DraftedPlayerCard.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG91cm5hbWVudFxfRHJhZnRlZFBsYXllckNhcmQuY3NodG1s
+[/Users/mikeypawluk/Documents/CS_SCHOOL/FantasyApp/v6/FantasyApp/Pages/Tournament/_DraftedPlayerCard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVG91cm5hbWVudC9fRHJhZnRlZFBsYXllckNhcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Tournament/_ExpandedGamePartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG91cm5hbWVudFxfRXhwYW5kZWRHYW1lUGFydGlhbC5jc2h0bWw=
+[/Users/mikeypawluk/Documents/CS_SCHOOL/FantasyApp/v6/FantasyApp/Pages/Tournament/_ExpandedGamePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVG91cm5hbWVudC9fRXhwYW5kZWRHYW1lUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Tournament/_UserScoresPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG91cm5hbWVudFxfVXNlclNjb3Jlc1BhcnRpYWwuY3NodG1s
+[/Users/mikeypawluk/Documents/CS_SCHOOL/FantasyApp/v6/FantasyApp/Pages/Tournament/_UserScoresPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVG91cm5hbWVudC9fVXNlclNjb3Jlc1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[/Users/mikeypawluk/Documents/CS_SCHOOL/FantasyApp/v6/FantasyApp/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+[/Users/mikeypawluk/Documents/CS_SCHOOL/FantasyApp/v6/FantasyApp/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/itsmi/Documents/Fantasy-App-School/FantasyApp - Leaguepedia/Pages/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-7mr9dlxa9r
+[/Users/mikeypawluk/Documents/CS_SCHOOL/FantasyApp/v6/FantasyApp/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-xkx16b6rtc

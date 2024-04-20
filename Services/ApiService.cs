@@ -7,7 +7,7 @@ namespace FantasyApp.Services;
 public class ApiService : IApiService, IDisposable
 {
     private readonly HttpClient client;
-    private readonly string pandascoreApiAuthorizationToken = "hlo6gTkk6fdNDHU6qgPVhSvXIQt6PAdyfrrR9QJPjGVOS-ozfs0";
+    private readonly string pandascoreApiAuthorizationToken = "";
 
     public ApiService()
     {
